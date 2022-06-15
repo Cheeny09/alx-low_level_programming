@@ -1,29 +1,30 @@
 #include "main.h"
 /**
- * *_strcat - function commute srtings
+ * *_strncat - concatenates two strings
  * @dest: first prototype of _strcat
  * @src: second prototype of _strcat
- * Return: return value to dest
+ * @n: int parameter
+ *
+ * Return: returns concatenated string
  */
 
-char *_strcat(char *dest, char *src)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i;
 	int x;
+	int i;
 
 	i = 0;
 	x = 0;
-
-	while (dest[i] != '\0')
+	while (dest[x] != '\0')
 	{
-		i++;
+		++x;
 	}
-	while (src[x] != '\0')
+	while (src[i] != 0 && i < n)
 	{
-		dest[i] = src[x];
-		x++;
-		i++;
+		dest[x] = src[i];
+		++i;
+		++x;
 	}
-	dest[i] = '\0';
+	dest[x] = '\0';
 	return (dest);
 }
